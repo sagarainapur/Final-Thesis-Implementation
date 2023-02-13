@@ -45,6 +45,7 @@ pipeline{
             }
         }
        
+
 	    
 	stage('Dockerize') {
 	     steps {
@@ -70,6 +71,19 @@ pipeline{
 			# Build the Docker image
         		#docker build -t ${docker_repo_uri}:${commit_id} .
 			docker build -t ${docker_repo_uri}:latest .
+			
+		
+		   ''' 
+	      }
+	}
+	
+		    
+	stage('Push to ECR') {
+	     steps {
+                  // Push the Docker image to AWS ECR
+                  sh '''
+		        ls -lash
+			
 						
         		# Get Docker login credentials for ECR
         		aws ecr get-login --no-include-email --region ${region} | sh
@@ -88,7 +102,7 @@ pipeline{
 		   ''' 
 	      }
 	}
-	
+
 		
 		
 	stage('Trivy Scans') {
