@@ -24,7 +24,8 @@ pipeline{
         
        stage('GetCode'){
             steps{
-                git branch: 'ecs_v1', url: 'https://github.com/sagarainapur/Final-Thesis-Implementation.git'
+                git branch: 'main', url: 'https://github.com/sagarainapur/Final-Thesis-Implementation.git'
+
             }
        }
        
