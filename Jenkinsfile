@@ -29,22 +29,7 @@ pipeline{
             }
        }
        
-	
-       stage('SonarQube analysis') {
-            //def scannerHome = tool 'SonarScanner 4.0';
-            steps{
-                withSonarQubeEnv('SonarQube-9.7.1') { 
-                // If you have configured more than one global server connection, you can specify its name
-                //sh "${scannerHome}/bin/sonar-scanner"
-                //sh "mvn clean verify sonar:sonar -Dsonar.projectKey=demo-app -Dsonar.host.url=http://107.22.241.117:9000 -Dsonar.login=sqp_e2ba3b07b8fe290f9235c068c949e58b18f5d0e6"
-                
-		sh "mvn clean verify sonar:sonar -Dsonar.projectKey=CICD -Dsonar.host.url=http://52.5.131.155:9000 -Dsonar.login=sqp_6c018a946c0729440463adbe15bd5b2bcd719365"
-		
-		
-		}
-            }
-        }
-       
+
 	    
 	stage('Dockerize') {
 	     steps {
@@ -89,36 +74,7 @@ pipeline{
 	      }
 	}
 	
-		
-		
-	stage('Trivy Scans') {
-	     steps {
-		     
-		  
-		  // Trivy tool
-		  sh '''
-		  
-		  	echo "Trivy tool scan"
-			
-		  	sudo apt-get install wget apt-transport-https gnupg lsb-release -y
-			wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
-			echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list
-			sudo apt-get update -y
-			sudo apt-get install trivy -y
-						
-			trivy image $docker_image > TrivyReport
-			
-			
-			\n
-			cat TrivyReport
-			\n
-			
-			
-		  '''
-		  
-	      }
-	}
-	
+
 	
 	
 	stage('ECS Depolyment') {
