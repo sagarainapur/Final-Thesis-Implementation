@@ -24,7 +24,7 @@ pipeline{
         
        stage('GetCode'){
             steps{
-                git branch: 'main', url: 'https://github.com/sagarainapur/Final-Thesis-Implementation.git'
+                git branch: 'POC', url: 'https://github.com/sagarainapur/Final-Thesis-Implementation.git'
 
             }
        }
