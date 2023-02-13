@@ -1,9 +1,9 @@
 {
-    "family": "first-run-task-definition",
+    "family": "vote",
     "networkMode": "awsvpc",
     "containerDefinitions": [
         {
-            "name": "sample-app",
+            "name": "vote-image",
             "image": "{{image}}",
             "portMappings": [
                 {
