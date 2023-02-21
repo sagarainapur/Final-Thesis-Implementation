@@ -139,6 +139,23 @@ pipeline{
 	      }
 	}
 	
+			
+	stage('Approval for deployemnt') {
+		input {
+		}
+	     steps {
+		     
+		  
+		  // Trivy tool
+		  sh '''
+		  
+		  	echo " Pipeline will proceed after approval"
+			
+			
+		  '''
+		  
+	      }
+	}
 	
 	
 	stage('ECS Depolyment') {
