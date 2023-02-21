@@ -141,10 +141,9 @@ pipeline{
 	
 			
 	stage('Approval for deployemnt') {
-		input {
-		}
+
 	     steps {
-		     
+		     input('Do you want to proceed?')
 		  
 		  // Trivy tool
 		  sh '''
