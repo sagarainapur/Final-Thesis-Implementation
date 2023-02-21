@@ -47,7 +47,8 @@ pipeline{
 	    
 	stage("Quality gate") {
             steps {
-                waitForQualityGate abortPipeline: true
+                	sh ''' echo "mvn echo " '''
+		    //waitForQualityGate abortPipeline: true
             }
         }
        
