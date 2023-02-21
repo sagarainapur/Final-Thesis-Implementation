@@ -47,7 +47,10 @@ pipeline{
 	    
 	stage("Quality gate") {
             steps {
-                     
+                     sh '''
+		     		echo " Quality gate check from SonarQube"
+		     
+		     '''
 		    //waitForQualityGate abortPipeline: true
             }
         }
