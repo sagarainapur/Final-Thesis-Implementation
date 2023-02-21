@@ -47,7 +47,8 @@ pipeline{
 	    
 	stage("Quality gate") {
             steps {
-                waitForQualityGate abortPipeline: true
+                     waitForQualityGate abortPipeline: true
+		    //waitForQualityGate abortPipeline: true
             }
         }
        
@@ -139,6 +140,24 @@ pipeline{
 	      }
 	}
 	
+			
+	stage('Approval for deployemnt') {
+
+	     steps {
+
+		  sh '''
+		  
+		  	echo " Pipeline will proceed after approval"
+			
+			
+		  '''
+		  
+		  
+		  input('Do you want to proceed?')
+		  
+		  
+	      }
+	}
 	
 	
 	stage('ECS Depolyment') {
