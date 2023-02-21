@@ -47,7 +47,7 @@ pipeline{
 	    
 	stage("Quality gate") {
             steps {
-                	sh ''' echo "mvn echo " '''
+                     waitForQualityGate abortPipeline: true
 		    //waitForQualityGate abortPipeline: true
             }
         }
@@ -144,15 +144,17 @@ pipeline{
 	stage('Approval for deployemnt') {
 
 	     steps {
-		     input('Do you want to proceed?')
-		  
-		  // Trivy tool
+
 		  sh '''
 		  
 		  	echo " Pipeline will proceed after approval"
 			
 			
 		  '''
+		  
+		  
+		  input('Do you want to proceed?')
+		  
 		  
 	      }
 	}
