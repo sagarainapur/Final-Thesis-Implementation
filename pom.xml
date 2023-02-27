@@ -216,10 +216,10 @@
   </dependencyManagement>
 
   <scm>
-    <connection>scm:git:git@github.com:sagarainapur/maven-project.git</connection>
-    <developerConnection>scm:git:git@github.com:sagarainapur/maven-project.git</developerConnection>
+    <connection>scm:git:git@github.com:sagarainapur/Final-Thesis-Implementation.git</connection>
+    <developerConnection>scm:git:git@github.com:sagarainapur/Final-Thesis-Implementation.git</developerConnection>
     <tag>HEAD</tag>
-    <url>https://github.com/sagarainapur/maven-project</url>
+    <url>https://github.com/sagarainapur/Final-Thesis-Implementation</url>
   </scm>
 
   <prerequisites>
