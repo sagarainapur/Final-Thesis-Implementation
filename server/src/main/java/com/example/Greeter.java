@@ -4,7 +4,6 @@ package com.example;
  * This is a class.
  */
 
-int currmin;
 public class Greeter {
   int currmin;
   /**
