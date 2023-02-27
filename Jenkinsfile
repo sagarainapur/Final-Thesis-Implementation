@@ -51,7 +51,7 @@ pipeline{
 		     		echo " Quality gate check from SonarQube"
 		     
 		     '''
-		    //waitForQualityGate abortPipeline: true
+		    waitForQualityGate abortPipeline: true
             }
         }
        
