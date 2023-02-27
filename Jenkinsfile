@@ -47,7 +47,18 @@ pipeline{
 	    
 	stage("Quality gate") {
             steps {
-                     sh '''
+                     
+		 withSonarQubeEnv('SonarQube-9.7.1') { 
+                 // If you have configured more than one global server connection, you can specify its name
+                 //sh "${scannerHome}/bin/sonar-scanner"
+                 //sh "mvn clean verify sonar:sonar -Dsonar.projectKey=demo-app -Dsonar.host.url=http://107.22.241.117:9000 -Dsonar.login=sqp_e2ba3b07b8fe290f9235c068c949e58b18f5d0e6"
+                
+		 sh "mvn clean verify sonar:sonar -Dsonar.projectKey=CICD -Dsonar.host.url=http://44.208.56.111:9000 -Dsonar.login=sqp_6c018a946c0729440463adbe15bd5b2bcd719365"
+		
+		
+		}
+		    
+		    sh '''
 		     		echo " Quality gate check from SonarQube"
 		     
 		     '''
