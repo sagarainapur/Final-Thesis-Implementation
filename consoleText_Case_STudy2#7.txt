@@ -1,0 +1,557 @@
+Started by user unknown or anonymous
+Obtained Jenkinsfile from git https://github.com/sagarainapur/Final-Thesis-Implementation.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/Case Study 2
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/Case Study 2/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/sagarainapur/Final-Thesis-Implementation.git # timeout=10
+Fetching upstream changes from https://github.com/sagarainapur/Final-Thesis-Implementation.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.34.1'
+ > git fetch --tags --force --progress -- https://github.com/sagarainapur/Final-Thesis-Implementation.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/cicd^{commit} # timeout=10
+Checking out Revision 53921fe8b8e521f77c4be0d4dafe61aa2dae0331 (refs/remotes/origin/cicd)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 53921fe8b8e521f77c4be0d4dafe61aa2dae0331 # timeout=10
+Commit message: "Update Jenkinsfile"
+First time build. Skipping changelog.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (GetCode)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] git
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/Case Study 2/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/sagarainapur/Final-Thesis-Implementation.git # timeout=10
+Fetching upstream changes from https://github.com/sagarainapur/Final-Thesis-Implementation.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.34.1'
+ > git fetch --tags --force --progress -- https://github.com/sagarainapur/Final-Thesis-Implementation.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 83929af0436eafe79a8272d56ae41011f13b1f75 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 83929af0436eafe79a8272d56ae41011f13b1f75 # timeout=10
+ > git branch -a -v --no-abbrev # timeout=10
+ > git branch -D main # timeout=10
+ > git checkout -b main 83929af0436eafe79a8272d56ae41011f13b1f75 # timeout=10
+Commit message: "Update Jenkinsfile"
+ > git rev-list --no-walk ab0690eff0e8501484173fee378688506547f203 # timeout=10
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Dockerize)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] sh
++ git rev-parse --short HEAD
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] sh
++ ls -lash
+total 72K
+4.0K drwxr-xr-x 11 jenkins jenkins 4.0K Feb 27 20:31 .
+4.0K drwxr-xr-x 23 jenkins jenkins 4.0K Feb 27 17:44 ..
+4.0K drwxr-xr-x  8 jenkins jenkins 4.0K Feb 27 20:31 .git
+8.0K -rw-r--r--  1 jenkins jenkins 5.0K Feb 27 20:31 Jenkinsfile
+4.0K -rw-r--r--  1 jenkins jenkins   96 Feb 27 17:44 README.md
+4.0K drwxr-xr-x  2 jenkins jenkins 4.0K Feb 27 17:44 docker-compose
+4.0K -rw-r--r--  1 jenkins jenkins  253 Feb 27 20:31 duplicate-line.py
+8.0K -rwxr-xr-x  1 jenkins jenkins 6.2K Feb 27 20:31 pom.xml
+4.0K drwxr-xr-x  5 jenkins jenkins 4.0K Feb 27 17:44 result
+4.0K drwxr-xr-x  2 jenkins jenkins 4.0K Feb 27 17:44 scripts
+4.0K drwxr-xr-x  3 jenkins jenkins 4.0K Feb 27 17:44 server
+4.0K drwxr-xr-x  2 jenkins jenkins 4.0K Feb 27 17:44 sonarqube
+4.0K -rw-r--r--  1 jenkins jenkins  502 Feb 27 20:31 taskdef.json
+4.0K drwxr-xr-x  5 jenkins jenkins 4.0K Feb 27 20:31 vote
+4.0K drwxr-xr-x  3 jenkins jenkins 4.0K Feb 27 17:44 webapp
+4.0K drwxr-xr-x  5 jenkins jenkins 4.0K Feb 27 17:44 worker
++ cd vote/
++ ls -lash
+total 32K
+4.0K drwxr-xr-x  5 jenkins jenkins 4.0K Feb 27 20:31 .
+4.0K drwxr-xr-x 11 jenkins jenkins 4.0K Feb 27 20:31 ..
+4.0K -rw-r--r--  1 jenkins jenkins  701 Feb 27 20:31 Dockerfile
+4.0K -rw-r--r--  1 jenkins jenkins 1.4K Feb 27 20:31 app.py
+4.0K drwxr-xr-x  3 jenkins jenkins 4.0K Feb 27 17:44 dotnet
+4.0K -rw-r--r--  1 jenkins jenkins   21 Feb 27 20:31 requirements.txt
+4.0K drwxr-xr-x  3 jenkins jenkins 4.0K Feb 27 17:44 static
+4.0K drwxr-xr-x  2 jenkins jenkins 4.0K Feb 27 17:44 templates
++ chmod +x Dockerfile app.py requirements.txt
++ ls -lash
+total 32K
+4.0K drwxr-xr-x  5 jenkins jenkins 4.0K Feb 27 20:31 .
+4.0K drwxr-xr-x 11 jenkins jenkins 4.0K Feb 27 20:31 ..
+4.0K -rwxr-xr-x  1 jenkins jenkins  701 Feb 27 20:31 Dockerfile
+4.0K -rwxr-xr-x  1 jenkins jenkins 1.4K Feb 27 20:31 app.py
+4.0K drwxr-xr-x  3 jenkins jenkins 4.0K Feb 27 17:44 dotnet
+4.0K -rwxr-xr-x  1 jenkins jenkins   21 Feb 27 20:31 requirements.txt
+4.0K drwxr-xr-x  3 jenkins jenkins 4.0K Feb 27 17:44 static
+4.0K drwxr-xr-x  2 jenkins jenkins 4.0K Feb 27 17:44 templates
++ docker build -t 498747127127.dkr.ecr.us-east-1.amazonaws.com/dockerimages:latest .
+Sending build context to Docker daemon  161.3kB
+Step 1/8 : FROM python:3.9-slim
+ ---> cdd46c8d76cc
+Step 2/8 : RUN apt-get update     && apt-get install -y --no-install-recommends     curl     && rm -rf /var/lib/apt/lists/*
+ ---> Running in 47c9584a1b80
+Get:1 http://deb.debian.org/debian bullseye InRelease [116 kB]
+Get:2 http://deb.debian.org/debian-security bullseye-security InRelease [48.4 kB]
+Get:3 http://deb.debian.org/debian bullseye-updates InRelease [44.1 kB]
+Get:4 http://deb.debian.org/debian bullseye/main amd64 Packages [8183 kB]
+Get:5 http://deb.debian.org/debian-security bullseye-security/main amd64 Packages [229 kB]
+Get:6 http://deb.debian.org/debian bullseye-updates/main amd64 Packages [14.6 kB]
+Fetched 8635 kB in 1s (6203 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libbrotli1 libcurl4 libldap-2.4-2 libnghttp2-14 libpsl5 librtmp1 libsasl2-2
+  libsasl2-modules-db libssh2-1
+Recommended packages:
+  libldap-common publicsuffix libsasl2-modules
+The following NEW packages will be installed:
+  curl libbrotli1 libcurl4 libldap-2.4-2 libnghttp2-14 libpsl5 librtmp1
+  libsasl2-2 libsasl2-modules-db libssh2-1
+0 upgraded, 10 newly installed, 0 to remove and 1 not upgraded.
+Need to get 1653 kB of archives.
+After this operation, 3623 kB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian bullseye/main amd64 libbrotli1 amd64 1.0.9-2+b2 [279 kB]
+Get:2 http://deb.debian.org/debian bullseye/main amd64 libsasl2-modules-db amd64 2.1.27+dfsg-2.1+deb11u1 [69.1 kB]
+Get:3 http://deb.debian.org/debian bullseye/main amd64 libsasl2-2 amd64 2.1.27+dfsg-2.1+deb11u1 [106 kB]
+Get:4 http://deb.debian.org/debian bullseye/main amd64 libldap-2.4-2 amd64 2.4.57+dfsg-3+deb11u1 [232 kB]
+Get:5 http://deb.debian.org/debian bullseye/main amd64 libnghttp2-14 amd64 1.43.0-1 [77.1 kB]
+Get:6 http://deb.debian.org/debian bullseye/main amd64 libpsl5 amd64 0.21.0-1.2 [57.3 kB]
+Get:7 http://deb.debian.org/debian bullseye/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-2+b2 [60.8 kB]
+Get:8 http://deb.debian.org/debian bullseye/main amd64 libssh2-1 amd64 1.9.0-2 [156 kB]
+Get:9 http://deb.debian.org/debian-security bullseye-security/main amd64 libcurl4 amd64 7.74.0-1.3+deb11u5 [346 kB]
+Get:10 http://deb.debian.org/debian-security bullseye-security/main amd64 curl amd64 7.74.0-1.3+deb11u5 [270 kB]
+[91mdebconf: delaying package configuration, since apt-utils is not installed
+[0mFetched 1653 kB in 0s (49.5 MB/s)
+Selecting previously unselected package libbrotli1:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 7031 files and directories currently installed.)
+Preparing to unpack .../0-libbrotli1_1.0.9-2+b2_amd64.deb ...
+Unpacking libbrotli1:amd64 (1.0.9-2+b2) ...
+Selecting previously unselected package libsasl2-modules-db:amd64.
+Preparing to unpack .../1-libsasl2-modules-db_2.1.27+dfsg-2.1+deb11u1_amd64.deb ...
+Unpacking libsasl2-modules-db:amd64 (2.1.27+dfsg-2.1+deb11u1) ...
+Selecting previously unselected package libsasl2-2:amd64.
+Preparing to unpack .../2-libsasl2-2_2.1.27+dfsg-2.1+deb11u1_amd64.deb ...
+Unpacking libsasl2-2:amd64 (2.1.27+dfsg-2.1+deb11u1) ...
+Selecting previously unselected package libldap-2.4-2:amd64.
+Preparing to unpack .../3-libldap-2.4-2_2.4.57+dfsg-3+deb11u1_amd64.deb ...
+Unpacking libldap-2.4-2:amd64 (2.4.57+dfsg-3+deb11u1) ...
+Selecting previously unselected package libnghttp2-14:amd64.
+Preparing to unpack .../4-libnghttp2-14_1.43.0-1_amd64.deb ...
+Unpacking libnghttp2-14:amd64 (1.43.0-1) ...
+Selecting previously unselected package libpsl5:amd64.
+Preparing to unpack .../5-libpsl5_0.21.0-1.2_amd64.deb ...
+Unpacking libpsl5:amd64 (0.21.0-1.2) ...
+Selecting previously unselected package librtmp1:amd64.
+Preparing to unpack .../6-librtmp1_2.4+20151223.gitfa8646d.1-2+b2_amd64.deb ...
+Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b2) ...
+Selecting previously unselected package libssh2-1:amd64.
+Preparing to unpack .../7-libssh2-1_1.9.0-2_amd64.deb ...
+Unpacking libssh2-1:amd64 (1.9.0-2) ...
+Selecting previously unselected package libcurl4:amd64.
+Preparing to unpack .../8-libcurl4_7.74.0-1.3+deb11u5_amd64.deb ...
+Unpacking libcurl4:amd64 (7.74.0-1.3+deb11u5) ...
+Selecting previously unselected package curl.
+Preparing to unpack .../9-curl_7.74.0-1.3+deb11u5_amd64.deb ...
+Unpacking curl (7.74.0-1.3+deb11u5) ...
+Setting up libpsl5:amd64 (0.21.0-1.2) ...
+Setting up libbrotli1:amd64 (1.0.9-2+b2) ...
+Setting up libnghttp2-14:amd64 (1.43.0-1) ...
+Setting up libsasl2-modules-db:amd64 (2.1.27+dfsg-2.1+deb11u1) ...
+Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b2) ...
+Setting up libsasl2-2:amd64 (2.1.27+dfsg-2.1+deb11u1) ...
+Setting up libssh2-1:amd64 (1.9.0-2) ...
+Setting up libldap-2.4-2:amd64 (2.4.57+dfsg-3+deb11u1) ...
+Setting up libcurl4:amd64 (7.74.0-1.3+deb11u5) ...
+Setting up curl (7.74.0-1.3+deb11u5) ...
+Processing triggers for libc-bin (2.31-13+deb11u5) ...
+Removing intermediate container 47c9584a1b80
+ ---> 5e77ea340717
+Step 3/8 : WORKDIR /app
+ ---> Running in 0d199f6fc3a0
+Removing intermediate container 0d199f6fc3a0
+ ---> 7336895ded2a
+Step 4/8 : COPY requirements.txt /app/requirements.txt
+ ---> 19ef88ac3fb4
+Step 5/8 : RUN pip install -r requirements.txt
+ ---> Running in 7222b9c75d9a
+Collecting Flask
+  Downloading Flask-2.2.3-py3-none-any.whl (101 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 101.8/101.8 KB 13.6 MB/s eta 0:00:00
+Collecting Redis
+  Downloading redis-4.5.1-py3-none-any.whl (238 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 238.5/238.5 KB 13.4 MB/s eta 0:00:00
+Collecting gunicorn
+  Downloading gunicorn-20.1.0-py3-none-any.whl (79 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.5/79.5 KB 12.2 MB/s eta 0:00:00
+Collecting Jinja2>=3.0
+  Downloading Jinja2-3.1.2-py3-none-any.whl (133 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.1/133.1 KB 15.5 MB/s eta 0:00:00
+Collecting itsdangerous>=2.0
+  Downloading itsdangerous-2.1.2-py3-none-any.whl (15 kB)
+Collecting Werkzeug>=2.2.2
+  Downloading Werkzeug-2.2.3-py3-none-any.whl (233 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 233.6/233.6 KB 12.9 MB/s eta 0:00:00
+Collecting importlib-metadata>=3.6.0
+  Downloading importlib_metadata-6.0.0-py3-none-any.whl (21 kB)
+Collecting click>=8.0
+  Downloading click-8.1.3-py3-none-any.whl (96 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.6/96.6 KB 13.3 MB/s eta 0:00:00
+Collecting async-timeout>=4.0.2
+  Downloading async_timeout-4.0.2-py3-none-any.whl (5.8 kB)
+Requirement already satisfied: setuptools>=3.0 in /usr/local/lib/python3.9/site-packages (from gunicorn->-r requirements.txt (line 3)) (58.1.0)
+Collecting zipp>=0.5
+  Downloading zipp-3.15.0-py3-none-any.whl (6.8 kB)
+Collecting MarkupSafe>=2.0
+  Downloading MarkupSafe-2.1.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25 kB)
+Installing collected packages: zipp, MarkupSafe, itsdangerous, gunicorn, click, async-timeout, Werkzeug, Redis, Jinja2, importlib-metadata, Flask
+Successfully installed Flask-2.2.3 Jinja2-3.1.2 MarkupSafe-2.1.2 Redis-4.5.1 Werkzeug-2.2.3 async-timeout-4.0.2 click-8.1.3 gunicorn-20.1.0 importlib-metadata-6.0.0 itsdangerous-2.1.2 zipp-3.15.0
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0m[91mWARNING: You are using pip version 22.0.4; however, version 23.0.1 is available.
+You should consider upgrading via the '/usr/local/bin/python -m pip install --upgrade pip' command.
+[0mRemoving intermediate container 7222b9c75d9a
+ ---> 9c792b6ab531
+Step 6/8 : COPY . .
+ ---> c0cc47560f3c
+Step 7/8 : EXPOSE 80
+ ---> Running in f518d8f06b3a
+Removing intermediate container f518d8f06b3a
+ ---> c049a868c50b
+Step 8/8 : CMD ["gunicorn", "app:app", "-b", "0.0.0.0:80", "--log-file", "-", "--access-logfile", "-", "--workers", "4", "--keep-alive", "0"]
+ ---> Running in 7df5388716ad
+Removing intermediate container 7df5388716ad
+ ---> a1a68fbf851d
+Successfully built a1a68fbf851d
+Successfully tagged 498747127127.dkr.ecr.us-east-1.amazonaws.com/dockerimages:latest
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Push to ECR)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ ls -lash
+total 72K
+4.0K drwxr-xr-x 11 jenkins jenkins 4.0K Feb 27 20:31 .
+4.0K drwxr-xr-x 23 jenkins jenkins 4.0K Feb 27 17:44 ..
+4.0K drwxr-xr-x  8 jenkins jenkins 4.0K Feb 27 20:31 .git
+8.0K -rw-r--r--  1 jenkins jenkins 5.0K Feb 27 20:31 Jenkinsfile
+4.0K -rw-r--r--  1 jenkins jenkins   96 Feb 27 17:44 README.md
+4.0K drwxr-xr-x  2 jenkins jenkins 4.0K Feb 27 17:44 docker-compose
+4.0K -rw-r--r--  1 jenkins jenkins  253 Feb 27 20:31 duplicate-line.py
+8.0K -rwxr-xr-x  1 jenkins jenkins 6.2K Feb 27 20:31 pom.xml
+4.0K drwxr-xr-x  5 jenkins jenkins 4.0K Feb 27 17:44 result
+4.0K drwxr-xr-x  2 jenkins jenkins 4.0K Feb 27 17:44 scripts
+4.0K drwxr-xr-x  3 jenkins jenkins 4.0K Feb 27 17:44 server
+4.0K drwxr-xr-x  2 jenkins jenkins 4.0K Feb 27 17:44 sonarqube
+4.0K -rw-r--r--  1 jenkins jenkins  502 Feb 27 20:31 taskdef.json
+4.0K drwxr-xr-x  5 jenkins jenkins 4.0K Feb 27 20:31 vote
+4.0K drwxr-xr-x  3 jenkins jenkins 4.0K Feb 27 17:44 webapp
+4.0K drwxr-xr-x  5 jenkins jenkins 4.0K Feb 27 17:44 worker
++ sh
++ aws ecr get-login --no-include-email --region us-east-1
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+WARNING! Your password will be stored unencrypted in /var/lib/jenkins/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
++ docker push 498747127127.dkr.ecr.us-east-1.amazonaws.com/dockerimages:latest
+The push refers to repository [498747127127.dkr.ecr.us-east-1.amazonaws.com/dockerimages]
+8146a53dc36d: Preparing
+3fb081b8320c: Preparing
+ed10c2202d35: Preparing
+f14f15520620: Preparing
+6ce7a4b49a01: Preparing
+550beda58888: Preparing
+43b1c6b4f686: Preparing
+7ca0a8cd8bdd: Preparing
+36e5ac463d7d: Preparing
+4695cdfb426a: Preparing
+550beda58888: Waiting
+43b1c6b4f686: Waiting
+7ca0a8cd8bdd: Waiting
+36e5ac463d7d: Waiting
+4695cdfb426a: Waiting
+ed10c2202d35: Pushed
+8146a53dc36d: Pushed
+f14f15520620: Pushed
+550beda58888: Layer already exists
+43b1c6b4f686: Layer already exists
+7ca0a8cd8bdd: Layer already exists
+36e5ac463d7d: Layer already exists
+4695cdfb426a: Layer already exists
+6ce7a4b49a01: Pushed
+3fb081b8320c: Pushed
+latest: digest: sha256:c953504739dc7dd6b23933ef0f06b0696130a60eb6d262671ead3ffab46fb863 size: 2414
++ docker rmi -f 498747127127.dkr.ecr.us-east-1.amazonaws.com/dockerimages:latest
+Untagged: 498747127127.dkr.ecr.us-east-1.amazonaws.com/dockerimages:latest
+Untagged: 498747127127.dkr.ecr.us-east-1.amazonaws.com/dockerimages@sha256:c953504739dc7dd6b23933ef0f06b0696130a60eb6d262671ead3ffab46fb863
+Deleted: sha256:a1a68fbf851d0d727af4013d4bf9531dd2314cdc24c10d75cf6509bb843d58cd
+Deleted: sha256:c049a868c50bf469cf46bc8d322b2e438c32d6d39273c7a228d0143e43b529c4
+Deleted: sha256:c0cc47560f3c786ccda82c82172336b3c976f536a04dba29cf1d9bba8d2df664
+Deleted: sha256:1c385ad241bf159702e7e6f75f6ecc0c9ced3bbd0300870a0a051dec50e237fc
+Deleted: sha256:9c792b6ab5310ccd9358af9c030f1cccacf1e6eb536618dfe5f536d557b34a79
+Deleted: sha256:6155f72275c257da9b2d7cefff9e83a0779af73dcc1c3b1165ad106fe63bf7ef
+Deleted: sha256:19ef88ac3fb4ad1ca19499b0bb17071e1e84af802f8e700daa10feb44239d885
+Deleted: sha256:bbe8796cfa0f029e403a5b315c793236e9af3a300f20d4c2a1cfaba9756f0e1f
+Deleted: sha256:7336895ded2a2d7b91a693ab6e4d212a7300c0593280bc50b8921142c0179f76
+Deleted: sha256:dfd7f17dcfd55a9a3a0c6e585391ab823ada635733602efe45cd293458690cd2
+Deleted: sha256:5e77ea3407172325f3fb717e97b2842a690f9104ded10f79ea20c8ab0d4e16aa
+Deleted: sha256:d7e57bc71eebd544ec4664391c8b0b629de3aa5b8a9a1c94990d718efd050910
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Approval for deployemnt)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ echo  Pipeline will proceed after approval
+ Pipeline will proceed after approval
+[Pipeline] input
+Do you want to proceed?
+Proceed or Abort
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (ECS Depolyment)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ sed -i s|{{image}}|498747127127.dkr.ecr.us-east-1.amazonaws.com/dockerimages:latest| taskdef.json
+[Pipeline] sh
++ aws ecs register-task-definition --execution-role-arn arn:aws:iam::498747127127:role/ecsTaskExecutionRole --cli-input-json file://taskdef.json --region us-east-1
+{
+    "taskDefinition": {
+        "taskDefinitionArn": "arn:aws:ecs:us-east-1:498747127127:task-definition/vote:66",
+        "containerDefinitions": [
+            {
+                "name": "vote-image",
+                "image": "498747127127.dkr.ecr.us-east-1.amazonaws.com/dockerimages:latest",
+                "cpu": 0,
+                "portMappings": [
+                    {
+                        "containerPort": 80,
+                        "hostPort": 80,
+                        "protocol": "tcp"
+                    }
+                ],
+                "essential": true,
+                "environment": [],
+                "mountPoints": [],
+                "volumesFrom": []
+            }
+        ],
+        "family": "vote",
+        "executionRoleArn": "arn:aws:iam::498747127127:role/ecsTaskExecutionRole",
+        "networkMode": "awsvpc",
+        "revision": 66,
+        "volumes": [],
+        "status": "ACTIVE",
+        "requiresAttributes": [
+            {
+                "name": "com.amazonaws.ecs.capability.ecr-auth"
+            },
+            {
+                "name": "ecs.capability.execution-role-ecr-pull"
+            },
+            {
+                "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+            },
+            {
+                "name": "ecs.capability.task-eni"
+            }
+        ],
+        "placementConstraints": [],
+        "compatibilities": [
+            "EC2",
+            "FARGATE"
+        ],
+        "requiresCompatibilities": [
+            "FARGATE"
+        ],
+        "cpu": "256",
+        "memory": "512",
+        "registeredAt": 1677529912.142,
+        "registeredBy": "arn:aws:iam::498747127127:user/upgradsagarainapurapur"
+    }
+}
+[Pipeline] sh
++ aws ecs update-service --cluster CICD_ECS --service vote --task-definition arn:aws:ecs:us-east-1:498747127127:task-definition/vote:2 --region us-east-1
+{
+    "service": {
+        "serviceArn": "arn:aws:ecs:us-east-1:498747127127:service/CICD_ECS/vote",
+        "serviceName": "vote",
+        "clusterArn": "arn:aws:ecs:us-east-1:498747127127:cluster/CICD_ECS",
+        "loadBalancers": [],
+        "serviceRegistries": [],
+        "status": "ACTIVE",
+        "desiredCount": 2,
+        "runningCount": 2,
+        "pendingCount": 0,
+        "launchType": "FARGATE",
+        "platformVersion": "LATEST",
+        "platformFamily": "Linux",
+        "taskDefinition": "arn:aws:ecs:us-east-1:498747127127:task-definition/vote:2",
+        "deploymentConfiguration": {
+            "deploymentCircuitBreaker": {
+                "enable": true,
+                "rollback": true
+            },
+            "maximumPercent": 200,
+            "minimumHealthyPercent": 100
+        },
+        "deployments": [
+            {
+                "id": "ecs-svc/3408732305447097052",
+                "status": "PRIMARY",
+                "taskDefinition": "arn:aws:ecs:us-east-1:498747127127:task-definition/vote:2",
+                "desiredCount": 2,
+                "pendingCount": 0,
+                "runningCount": 2,
+                "failedTasks": 0,
+                "createdAt": 1677519233.961,
+                "updatedAt": 1677529801.091,
+                "launchType": "FARGATE",
+                "platformVersion": "1.4.0",
+                "platformFamily": "Linux",
+                "networkConfiguration": {
+                    "awsvpcConfiguration": {
+                        "subnets": [
+                            "subnet-c37f34a5",
+                            "subnet-840a11c9",
+                            "subnet-45767b4b",
+                            "subnet-0293c75d",
+                            "subnet-68a0f649",
+                            "subnet-3d53cc0c"
+                        ],
+                        "securityGroups": [
+                            "sg-bf279aa4"
+                        ],
+                        "assignPublicIp": "ENABLED"
+                    }
+                },
+                "rolloutState": "COMPLETED",
+                "rolloutStateReason": "ECS deployment ecs-svc/3408732305447097052 completed."
+            }
+        ],
+        "roleArn": "arn:aws:iam::498747127127:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+        "events": [
+            {
+                "id": "40f440bb-36fa-41d0-a8e4-a70fc0cac26e",
+                "createdAt": 1677528891.393,
+                "message": "(service vote) has reached a steady state."
+            },
+            {
+                "id": "3eb5a5fc-0a16-4f88-b282-bb13c37b10bc",
+                "createdAt": 1677528862.894,
+                "message": "(service vote) has started 1 tasks: (task 83f92b8e6f2641a5be2fd83e3d90f234)."
+            },
+            {
+                "id": "107a54e8-351b-4237-8a41-a9de1d5ec7fa",
+                "createdAt": 1677519273.543,
+                "message": "(service vote) has reached a steady state."
+            },
+            {
+                "id": "d31fbab3-9919-49b8-8bd0-a511bae8efdb",
+                "createdAt": 1677519273.542,
+                "message": "(service vote) (deployment ecs-svc/3408732305447097052) deployment completed."
+            },
+            {
+                "id": "6b5234b7-e52d-49ac-9394-20e5fd0d2116",
+                "createdAt": 1677519237.651,
+                "message": "(service vote) has started 1 tasks: (task 85e1c843c5bc43f194fb399a65ef8d7c)."
+            }
+        ],
+        "createdAt": 1677519233.961,
+        "placementConstraints": [],
+        "placementStrategy": [],
+        "networkConfiguration": {
+            "awsvpcConfiguration": {
+                "subnets": [
+                    "subnet-c37f34a5",
+                    "subnet-840a11c9",
+                    "subnet-45767b4b",
+                    "subnet-0293c75d",
+                    "subnet-68a0f649",
+                    "subnet-3d53cc0c"
+                ],
+                "securityGroups": [
+                    "sg-bf279aa4"
+                ],
+                "assignPublicIp": "ENABLED"
+            }
+        },
+        "schedulingStrategy": "REPLICA",
+        "deploymentController": {
+            "type": "ECS"
+        },
+        "createdBy": "arn:aws:iam::498747127127:root",
+        "enableECSManagedTags": true,
+        "propagateTags": "NONE",
+        "enableExecuteCommand": false
+    }
+}
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
