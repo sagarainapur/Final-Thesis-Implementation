@@ -88,6 +88,28 @@ pipeline{
 	}
 	
 	
+		
+			
+	stage('Approval for deployemnt') {
+
+	     steps {
+
+		  sh '''
+		  
+		  	echo " Pipeline will proceed after approval"
+			
+			
+		  '''
+		  
+		  
+		  input('Do you want to proceed?')
+		  
+		  
+	      }
+	}
+	
+	    
+	    
 	stage('ECS Depolyment') {
 		
 	     steps {
