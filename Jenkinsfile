@@ -57,7 +57,7 @@ pipeline{
                  // If you have configured more than one global server connection, you can specify its name
       	
 			 timeout(time: 1, unit: 'HOURS') {
-            			//waitForQualityGate abortPipeline: true
+            			waitForQualityGate abortPipeline: true
         		}
 
 		
